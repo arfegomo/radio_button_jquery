@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Concepto</td>
+            <td><input type="radio" id="radio-si" name="grupo">Si</td>
+            <td><input type="radio" id="radio-no" name="grupo">No</td>
+        </tr>
+        <tr>
+            <td>Miopia</td>
+            <td><input type="radio" id="opcion_1" name="miopia"></td>
+            <td><input type="radio" id="opcion_2" name="miopia"></td>
+        </tr>
+        <tr>
+            <td>Astigmatismo</td>
+            <td><input type="radio" id="opcion_3" name="astigmatismo"></td>
+            <td><input type="radio" id="opcion_4" name="astigmatismo"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    $( document ).ready(function() {
+        $("#radio-si").click(function(){
+            $("#opcion_1").prop('checked', true);
+            $("#opcion_3").prop('checked', true);
+        })
+        $("#radio-no").click(function(){
+            $("#opcion_2").prop('checked', true);
+            $("#opcion_4").prop('checked', true);
+        })
+        $("#opcion_1").click(function(){
+            $("#radio-no").prop('checked', false);
+        })
+        $("#opcion_2").click(function(){
+            $("#radio-si").prop('checked', false);
+        })
+        $("#opcion_3").click(function(){
+            $("#radio-no").prop('checked', false);
+        })
+        $("#opcion_4").click(function(){
+            $("#radio-si").prop('checked', false);
+        })
+    });
+</script>
